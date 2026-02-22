@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About • Password Strength Checker</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <meta name="description" content="Learn how password strength works: criteria, entropy, and attack models.">
+</head>
+<body>
+  <header class="site-header dark-surface">
+    <nav class="nav">
+      <div class="brand">
+        <svg class="brand-logo" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M17 9V7a5 5 0 0 0-10 0v2H5v12h14V9h-2Zm-8 0V7a3 3 0 1 1 6 0v2H9Zm3 5a2 2 0 0 0-2 2c0 .74.4 1.38 1 1.73V20h2v-2.27c.6-.35 1-.99 1-1.73a2 2 0 0 0-2-2Z"/>
+        </svg>
+        <span class="brand-name">Password Strength Checker</span>
+      </div>
+      <button id="themeToggle" aria-label="Toggle theme" class="icon-btn">Dark</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="privacy.html">Security & Privacy</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card prose">
+      <h1>How Password Strength Works</h1>
+      <p>This tool combines rule-based checks and an AI-style composite score to assess password strength. It evaluates length, character variety, and common patterns while estimating entropy and time-to-crack under typical attack assumptions.</p>
+      <h2>What Affects Strength</h2>
+      <ul>
+        <li>Length: Longer passwords resist brute force exponentially.</li>
+        <li>Variety: Mixing upper/lowercase, numbers, and symbols increases the search space.</li>
+        <li>Avoid Patterns: Common words, keyboard sequences, and repeated characters reduce security.</li>
+        <li>Uniqueness: Do not reuse passwords across accounts.</li>
+      </ul>
+      <h2>Entropy</h2>
+      <p>Entropy estimates the unpredictability of a password in bits. Each bit doubles the attacker’s work. This tool estimates entropy based on the character set actually used.</p>
+      <h2>Time to Crack</h2>
+      <p>Estimated cracking time is derived from entropy and assumes high-speed offline attacks. Real-world results vary with attacker capabilities and protective measures like rate limiting and hashing.</p>
+      <p><a class="btn" href="index.html">Try the checker</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Password Strength Checker • Educational use</p>
+  </footer>
+
+  <script type="module" src="src/app-basic.js"></script>
+</body>
+</html>

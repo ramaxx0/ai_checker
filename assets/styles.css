@@ -1,0 +1,238 @@
+:root {
+  --bg: #0b0f12;
+  --fg: #e8edf2;
+  --fg-on-dark: #e8edf2;
+  --muted: #9aa5b1;
+  --card: #141a1f;
+  --border: #1f2931;
+  --brand: #7c5cff;
+  --accent: #00c2a8;
+  --weak: #f43f5e;
+  --medium: #f59e0b;
+  --strong: #22c55e;
+  --radius: 12px;
+  --shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+* { box-sizing: border-box }
+html, body { height: 100% }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+  background: linear-gradient(180deg, #0b0f12 0%, #0d1117 100%);
+  color: var(--fg);
+  line-height: 1.6;
+}
+.site-header {
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(8px);
+  background: rgba(11,15,18,0.6);
+  z-index: 10;
+}
+.nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700 }
+.brand-logo { font-size: 20px }
+.brand-name { letter-spacing: .2px }
+.nav-links {
+  margin-left: auto;
+  display: flex;
+  gap: 14px;
+  list-style: none;
+  padding: 0;
+}
+.nav a {
+  color: var(--fg);
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+.nav a.active, .nav a:hover {
+  background: var(--card);
+}
+.icon-btn {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--fg);
+  border-radius: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+.container {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 16px;
+}
+.card {
+  background: radial-gradient(1200px 200px at 50% -20%, rgba(124,92,255,0.12), transparent 60%), var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+.title { margin: 0 0 6px 0 }
+.subtitle { color: var(--muted); margin: 0 0 18px 0 }
+.input-row label { display: block; margin: 14px 0 8px; color: var(--muted) }
+.password-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #0f141a;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+}
+.password-field input {
+  flex: 1;
+  font-size: 18px;
+  background: transparent;
+  color: var(--fg);
+  outline: none;
+  border: 0;
+}
+.strength { margin-top: 18px }
+.strength-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px }
+.badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  background: #10161d;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+.progress {
+  height: 12px;
+  background: #0e141a;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--weak), var(--medium), var(--strong));
+  transition: width .25s ease, background .25s ease;
+}
+.grid { display: grid; gap: 16px; margin-top: 16px }
+.grid.two { grid-template-columns: repeat(2, minmax(0,1fr)) }
+.panel {
+  background: #0f141a;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+.list, .checklist { margin: 0; padding-left: 20px }
+.metrics { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px }
+.metric { background: #0c1218; padding: 12px; border-radius: 10px; border: 1px solid var(--border) }
+.metric-label { color: var(--muted); font-size: 12px }
+.metric-value { font-weight: 700 }
+.notice {
+  margin-top: 18px;
+  color: var(--muted);
+}
+.btn {
+  display: inline-block;
+  background: var(--brand);
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 0;
+}
+.site-footer {
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+  padding: 16px;
+  text-align: center;
+  color: var(--muted);
+}
+.prose h1, .prose h2, .prose p, .prose ul { margin-top: 0 }
+
+@media (max-width: 800px) {
+  .grid.two { grid-template-columns: 1fr }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0b0f12;
+  --fg: #e8edf2;
+  --fg-on-dark: #e8edf2;
+  --muted: #9aa5b1;
+  --card: #141a1f;
+  --border: #1f2931;
+  --brand: #7c5cff;
+  --accent: #00c2a8;
+  --weak: #f43f5e;
+  --medium: #f59e0b;
+  --strong: #22c55e;
+  --radius: 12px;
+  --shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+:root[data-theme="dark"] body { background: linear-gradient(180deg, #0b0f12 0%, #0d1117 100%) }
+
+:root[data-theme="light"] {
+  --bg: #ffffff;
+  --fg: #000000;
+  --fg-on-dark: #ffffff;
+  --muted: #596273;
+  --card: #ffffff;
+  --border: #e6e9ef;
+  --brand: #7c5cff;
+  --accent: #00b39c;
+  --weak: #e11d48;
+  --medium: #d97706;
+  --strong: #16a34a;
+  --radius: 12px;
+  --shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+:root[data-theme="light"] body { background: linear-gradient(180deg, #f6f8fb 0%, #ffffff 100%); color: var(--fg) }
+
+.dark-surface { color: var(--fg-on-dark) }
+.site-header.dark-surface .brand, .site-header.dark-surface .brand-name, .site-header.dark-surface .brand-logo { color: var(--fg-on-dark) }
+
+/* Ensure components switch to light surfaces when light theme is forced */
+:root[data-theme="light"] .panel,
+:root[data-theme="light"] .metric,
+:root[data-theme="light"] .password-field,
+:root[data-theme="light"] .badge,
+:root[data-theme="light"] .progress {
+  background: #f6f8fb;
+  border-color: #e6e9ef;
+  color: var(--fg);
+}
+:root[data-theme="light"] .metric { background: #f9fafb }
+:root[data-theme="light"] .password-field { background: #f6f8fb }
+:root[data-theme="light"] .badge { background: #f6f8fb }
+:root[data-theme="light"] .progress { background: #f1f5f9 }
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #ffffff;
+    --fg: #0b1020;
+    --muted: #596273;
+    --card: #ffffff;
+    --border: #e6e9ef;
+    --shadow: 0 10px 30px rgba(0,0,0,0.08);
+  }
+  body { background: linear-gradient(180deg, #f6f8fb 0%, #ffffff 100%) }
+  .icon-btn { background: #f6f8fb; border-color: #e6e9ef }
+  .panel, .metric { background: #f9fafb; border-color: #e6e9ef }
+  .password-field { background: #f6f8fb; border-color: #e6e9ef }
+  .badge { background: #f6f8fb; border-color: #e6e9ef }
+}
+
+.bar-very-weak { background: var(--weak) }
+.bar-weak { background: linear-gradient(90deg, var(--weak), var(--medium)) }
+.bar-medium { background: var(--medium) }
+.bar-strong { background: linear-gradient(90deg, var(--medium), var(--strong)) }
+.bar-very-strong { background: var(--strong) }
+
+.ok { color: var(--strong) }
+.warn { color: var(--medium) }
+.bad { color: var(--weak) }
